@@ -1,0 +1,33 @@
+# Dependências
+node_modules/
+
+# Build output
+build/
+
+# Arquivos de configuração
+*.env.local
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de build
+*.log
+*.log.*
+yarn-error.log*
+npm-debug.log*
+pnpm-debug.log*
+
+# Cache
+.pnp/
+.pnp.js
+.cache/
+yarn.lock
+package-lock.json
+npm-shrinkwrap.json
+
+# Outros
+*.DS_Store
+*.idea/
+.vscode/
+coverage/
