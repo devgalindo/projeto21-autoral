@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
-import HomeLayout from './Layouts/HomeLayout';
-import LoginSigninLayout from './Layouts/LoginSigninLayout';
+import { HomeLayout, LoginSigninLayout } from './Layouts';
 import {
   BookPage,
   CommunityPage,
@@ -18,11 +17,11 @@ function App() {
     <Router>
       <Routes>
 
-        <Route path='*' element={<Navigate to={'/auth/'}/>}/>
+        <Route path='*' element={<Navigate to={'/auth/signin'}/>}/>
 
         <Route path="/auth/" element={<LoginSigninLayout />}>
-          <Route path="sigin" element={<SigninPage />} />
-          <Route path="sigup" element={<SignupPage />} />
+          <Route path="signin" element={<SigninPage />} />
+          <Route path="signup" element={<SignupPage />} />
         </Route>
 
         <Route path="/home/" element={<HomeLayout />}>
