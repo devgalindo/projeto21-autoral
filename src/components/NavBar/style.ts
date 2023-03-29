@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import { SxProps } from "@mui/material";
 
-const profileIcon = styled.div``
 
-export {
-    profileIcon
+export const sxTabs: SxProps = {
+    marginLeft: "auto"
 }

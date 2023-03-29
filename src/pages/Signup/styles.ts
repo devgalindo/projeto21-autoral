@@ -1,25 +1,23 @@
 import { SxProps } from "@mui/material";
+import { mainColor } from "../../constants/colors";
 
-export const sxContainer: SxProps = {
+export const sxOuterBox: SxProps = {
     display:'flex', 
-    flexDirection:'column',
-    justifyContent:'center',
     backgroundColor:'white',
-    height:'70vh',
+    width:'100vw',
+    height:'100vh',
     borderRadius:'20px'
 }
 
-export const sxBox: SxProps = {
-    display:'flex',
-    flexDirection:'column',
+export const sxLogoContainer: SxProps = {
+    display: 'flex',
+    justifyContent:'center',
     alignItems:'center'
 }
 
-export const sxTextField: SxProps = {
-    width: 350
-}
-
-export const sxButton: SxProps = {
-    width: 350,
-    marginTop: 2
+export const sxFormContainer: SxProps = {
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    bgcolor: mainColor
 }

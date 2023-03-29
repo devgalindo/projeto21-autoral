@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import { HomeLayout, LoginSigninLayout } from './Layouts';
 import {
   BookPage,
@@ -16,27 +21,27 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<Navigate to={'/'} />} />
 
-        <Route path='*' element={<Navigate to={'/auth/signin'}/>}/>
+        <Route path="/" element={<SigninPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+
+        <Route path="/home" element={<FeedPage />} />
+        <Route path="/home/posts/:post" element={<PostPage />} />
+        <Route path="/home/books/:book" element={<BookPage />} />
+        <Route path="/home/communities/:community" element={<CommunityPage />} />
+
+        <Route path="/profiles/me" element={<ProfilePage />} />
+        <Route path="/profiles/me/library" element={<ProfilePage />} />
+        <Route path="/profiles/:profile" element={<ProfilePage />} />
+        <Route path="/profiles/:profile/library" element={<LibraryPage />} />
+        
+        <Route path="/write" element={<WritePage />} />
 
         <Route path="/auth/" element={<LoginSigninLayout />}>
-          <Route path="signin" element={<SigninPage />} />
-          <Route path="signup" element={<SignupPage />} />
         </Route>
 
-        <Route path="/home/" element={<HomeLayout />}>
-          <Route path="profiles/:profile" element={<ProfilePage />}>
-            <Route path="posts/:post" element={<PostPage />} />
-            <Route path="write" element={<WritePage />} />
-            <Route path="library" element={<LibraryPage />}>
-              <Route path="books/:book" element={<BookPage />} />
-            </Route>
-          </Route>
-        </Route>
-
-        <Route path="/feed/" element={<FeedPage />} >
-          <Route path="books/:book" element={<BookPage />} />
-          <Route path="communities/:community" element={<CommunityPage />} />
+        <Route path="/" element={<HomeLayout />}>
         </Route>
 
       </Routes>
